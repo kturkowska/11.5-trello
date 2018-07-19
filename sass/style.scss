@@ -1,0 +1,39 @@
+body {
+	font-family: 'Lato';
+	background-color: #888888;
+	.board {
+		width: 70vw;
+		margin: 0 auto;
+	};
+	button {
+		display: inline-block;
+    	padding: 11px 50px;
+    	min-width: 300px;
+    	margin: 15px;
+    
+    
+		font-size: 16px;
+    	font-weight: 600;
+    	text-align: center;
+    	white-space: nowrap;
+    	vertical-align: middle;
+
+		color: #fff;
+    	background-color: #ccc;
+		border: 2px solid #ccc;
+    	border-radius: 4px;
+    	transition: color .3s, background-color .3s;
+
+    	cursor: pointer;
+		outline: 0!important;
+		text-decoration: none;
+    	touch-action: manipulation;
+    	user-select: none;
+	
+		&:hover, &:active {
+			color: #ccc;
+			background-color: #fff;
+		}
+	}
+	
+}
