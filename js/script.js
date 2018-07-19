@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
         	str += chars[Math.floor(Math.random() * chars.length)]; //literuj,e tblicę chars przez wszystkie elementy, z których biore randomowe 10
     	}
     	return str; //zwracam id
-	}
+	};
 
 
 	function generateTemplate(name, data, basicElement) {
@@ -21,14 +21,17 @@ document.addEventListener('DOMContentLoaded', function() {
   		element.innerHTML = Mustache.render(template, data);
 
   		return element;
-	}
+	};
 
 	function Column(name) {
   		var self = this;
 
  		this.id = randomString();
   		this.name = name;
-  		this.element = generateTemplate('column-template', { name: this.name });
+  		this.element = generateTemplate('column-template', { 
+  			name: this.name,
+  			id: this.id 
+  		});
 		this.element.querySelector('.column').addEventListener('click', function (event) {
   			if (event.target.classList.contains('btn-delete')) {
     			self.removeColumn();
@@ -38,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
     			self.addCard(new Card(prompt("Enter the name of the card")));
   			}
   		});
-	}
+	};
 
 	Column.prototype = {
     	addCard: function(card) {
@@ -47,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
     	removeColumn: function() {
       		this.element.parentNode.removeChild(this.element);
     	}
-	}
+	};
 
 	function Card(description) {
   		var self = this;
@@ -62,13 +65,13 @@ document.addEventListener('DOMContentLoaded', function() {
     			self.removeCard();
   			}
 		});
-	}
+	};
 
 	Card.prototype = {
 		removeCard: function() {
 			this.element.parentNode.removeChild(this.element);
     	}
-	}
+	};
 
 	var board = {
     	name: 'Kanban Board',
@@ -77,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
       		initSortable(column.id); //??
     	},
     	element: document.querySelector('#board .column-container')
-	}
+	};
 
 	function initSortable(id) {
   		var el = document.getElementById(id);
@@ -85,13 +88,13 @@ document.addEventListener('DOMContentLoaded', function() {
     		group: 'kanban',
     		sort: true
   		});
-	}
+	};
 
 	document.querySelector('#board .create-column').addEventListener('click', function() {
     	var name = prompt('Enter a column name');
     	var column = new Column(name);
     	board.addColumn(column);
-	})
+	});
 
 
 // CREATING COLUMNS
