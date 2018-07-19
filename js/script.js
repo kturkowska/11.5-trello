@@ -1,6 +1,7 @@
 'use strict'
 
 document.addEventListener('DOMContentLoaded', function() {
+
 //generuję id, którego później będą używać kartki i kolumny
 	function randomString() {
     	var chars = '0123456789abcdefghiklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXTZ'; //zbiór elementów z których funkcja losuje
@@ -9,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
         	str += chars[Math.floor(Math.random() * chars.length)]; //literuj,e tblicę chars przez wszystkie elementy, z których biore randomowe 10
     	}
     	return str; //zwracam id
-	};
+	}
 
 
 	function generateTemplate(name, data, basicElement) {
@@ -20,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
   		element.innerHTML = Mustache.render(template, data);
 
   		return element;
-	};
+	}
 
 	function Column(name) {
   		var self = this;
@@ -37,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
     			self.addCard(new Card(prompt("Enter the name of the card")));
   			}
   		});
-	};
+	}
 
 	Column.prototype = {
     	addCard: function(card) {
@@ -46,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
     	removeColumn: function() {
       		this.element.parentNode.removeChild(this.element);
     	}
-	};
+	}
 
 	function Card(description) {
   		var self = this;
@@ -61,12 +62,57 @@ document.addEventListener('DOMContentLoaded', function() {
     			self.removeCard();
   			}
 		});
-	};
+	}
 
 	Card.prototype = {
 		removeCard: function() {
 			this.element.parentNode.removeChild(this.element);
     	}
-	};
+	}
+
+	var board = {
+    	name: 'Kanban Board',
+    	addColumn: function(column) {
+      		this.element.appendChild(column.element);
+      		initSortable(column.id); //??
+    	},
+    	element: document.querySelector('#board .column-container')
+	}
+
+	function initSortable(id) {
+  		var el = document.getElementById(id);
+  		var sortable = Sortable.create(el, {
+    		group: 'kanban',
+    		sort: true
+  		});
+	}
+
+	document.querySelector('#board .create-column').addEventListener('click', function() {
+    	var name = prompt('Enter a column name');
+    	var column = new Column(name);
+    	board.addColumn(column);
+	})
+
+
+// CREATING COLUMNS
+var todoColumn = new Column('To do');
+var doingColumn = new Column('Doing');
+var doneColumn = new Column('Done');
+
+// ADDING COLUMNS TO THE BOARD
+board.addColumn(todoColumn);
+board.addColumn(doingColumn);
+board.addColumn(doneColumn);
+
+// CREATING CARDS
+var card1 = new Card('New task');
+var card2 = new Card('Create kanban boards');
+
+// ADDING CARDS TO COLUMNS
+todoColumn.addCard(card1);
+doingColumn.addCard(card2);
+
+
 
 });
+
