@@ -61,6 +61,12 @@ document.addEventListener('DOMContentLoaded', function() {
     			self.removeCard();
   			}
 		});
-	}
+	};
+
+	Card.prototype = {
+		removeCard: function() {
+			this.element.parentNode.removeChild(this.element);
+    	}
+	};
 
 });
