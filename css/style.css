@@ -1,0 +1,104 @@
+body {
+  font-family: 'Lato';
+  background-color: #dedede;
+  box-sizing: border-box;
+}
+body .board {
+  width: 80vw;
+  margin: 0 auto;
+}
+body .board button {
+  display: inline-block;
+  padding: 5px 5px;
+  
+  font-size: 12px;
+  font-weight: 900;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  color: #fff;
+  background-color: #ccc;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  transition: color 0.3s, background-color 0.3s;
+  cursor: pointer;
+  outline: 0 !important;
+  text-decoration: none;
+  touch-action: manipulation;
+  user-select: none;
+}
+body .board button:hover, body .board button:active {
+  color: #ccc;
+  background-color: inherit;
+}
+body .board .add-card, .create-column {
+  min-width: 100px;
+  margin:  0;
+}
+body .board .column-container {
+ position: relative;
+
+}
+body .board .btn-delete {
+  width: 50px;
+  margin: 2px;
+  background: white;
+  color: orange; 
+  border-color: white;
+
+}
+body .board .col-del {
+  width: 50px;
+  margin: 2px;
+  background: white;
+  color: orange; 
+  border-color: white;
+  position: absolute;
+  top:10px;
+  right: 10px;
+}
+body .board .add-card {
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+}
+body .board .card-del {
+  width: 20px;
+  height:20px;
+  margin: 2px;
+  background: inherit;
+  color: white; 
+  border-color: orange;
+  position: absolute;
+  top:0px;
+  right: 0px;
+}
+.column {
+  position: relative;
+  float: left;
+  min-width: 30%;
+  margin-right: 10px;
+  margin-top: 10px;
+  padding: 15px;
+  background-color: white;
+  border-radius: 5px;
+}
+.column ul  {
+    list-style-type: none;
+    float: left;
+}
+.card{
+  position: relative;
+  float: left;
+
+  margin-left: -40px;
+  margin-bottom: 30px;
+  background-color: orange;
+   border-radius: 5px;
+   padding: 5px 25px 5px 15px;
+}
+
+.column-container {
+ height:100vh;
+
+}
