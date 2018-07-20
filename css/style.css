@@ -33,7 +33,7 @@ body .board button {
 }
 body .board button:hover, body .board button:active {
   color: #ccc;
-  background-color: inherit;
+  background-color: none;
 }
 body .board .add-card, .create-column {
   min-width: 100px;
@@ -42,13 +42,6 @@ body .board .add-card, .create-column {
 body .board .column-container {
  position: relative;
 
-}
-body .board .btn-delete {
-  width: 50px;
-  margin: 2px;
-  background: white;
-  color: orange; 
-  border-color: white;
 
 }
 body .board .col-del {
@@ -70,9 +63,9 @@ body .board .card-del {
   width: 20px;
   height:20px;
   margin: 2px;
-  background: inherit;
+  background: none;
   color: white; 
-  border-color:  #cfd67e;
+  border:none;
   position: absolute;
   top:0px;
   right: 0px;
@@ -90,13 +83,13 @@ body .board .card-del {
 .column ul  {
     list-style-type: none;
     float: left;
-  
+
 }
 .card{
   position: relative;
   float: left;
   margin: 5px 5px 30px 5px;
-  background-color: #cfd67e;
+  background-color: rgba(207, 214, 126, 0.7);
   border-radius: 5px;
   padding: 5px 25px 5px 15px;
   height: 100%;
