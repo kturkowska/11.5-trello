@@ -101,21 +101,29 @@ document.addEventListener('DOMContentLoaded', function() {
 var todoColumn = new Column('To do');
 var doingColumn = new Column('Doing');
 var doneColumn = new Column('Done');
+var otherColumn = new Column('Other');
 
 // ADDING COLUMNS TO THE BOARD
 board.addColumn(todoColumn);
 board.addColumn(doingColumn);
 board.addColumn(doneColumn);
+board.addColumn(otherColumn);
 
 // CREATING CARDS
 var card1 = new Card('New task');
 var card2 = new Card('Create kanban boards');
 var card3 = new Card ('Everything');
+var card4 = new Card ('Some stuff like deadlines for project A');
+var card5 = new Card ('Some stuff like deadlines for project A');
+var card6 = new Card ('Nothing');
 
 // ADDING CARDS TO COLUMNS
 todoColumn.addCard(card1);
 doingColumn.addCard(card2);
 doneColumn.addCard(card3);
+doneColumn.addCard(card5);
+otherColumn.addCard(card4);
+todoColumn.addCard(card6);
 
 
 

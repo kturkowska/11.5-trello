@@ -2,10 +2,14 @@ body {
   font-family: 'Lato';
   background-color: #dedede;
   box-sizing: border-box;
+  background-image: url("https://images.pexels.com/photos/1069798/pexels-photo-1069798.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-size: cover;
+  background-position: center;
 }
 body .board {
   width: 80vw;
   margin: 0 auto;
+
 }
 body .board button {
   display: inline-block;
@@ -17,7 +21,7 @@ body .board button {
   white-space: nowrap;
   vertical-align: middle;
   color: #fff;
-  background-color: #ccc;
+  background-color: inherit;
   border: 2px solid #ccc;
   border-radius: 4px;
   transition: color 0.3s, background-color 0.3s;
@@ -50,9 +54,9 @@ body .board .btn-delete {
 body .board .col-del {
   width: 50px;
   margin: 2px;
-  background: white;
-  color: orange; 
-  border-color: white;
+  background: rgba(255, 255, 255, 0.3);
+  color: white; 
+  border-color: rgba(255, 255, 255, 0.3);
   position: absolute;
   top:10px;
   right: 10px;
@@ -68,7 +72,7 @@ body .board .card-del {
   margin: 2px;
   background: inherit;
   color: white; 
-  border-color: orange;
+  border-color:  #cfd67e;
   position: absolute;
   top:0px;
   right: 0px;
@@ -80,25 +84,33 @@ body .board .card-del {
   margin-right: 10px;
   margin-top: 10px;
   padding: 15px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.3);
   border-radius: 5px;
 }
 .column ul  {
     list-style-type: none;
     float: left;
+  
 }
 .card{
   position: relative;
   float: left;
-  margin-left: -40px;
-  margin-bottom: 30px;
-  background-color: orange;
-   border-radius: 5px;
-   padding: 5px 25px 5px 15px;
-   height: 100%;
+  margin: 5px 5px 30px 5px;
+  background-color: #cfd67e;
+  border-radius: 5px;
+  padding: 5px 25px 5px 15px;
+  height: 100%;
+  font-weight: 900;
+
 }
 
 .column-container {
  height:100vh;
 
+}
+h1 {
+  font-weight: 900;
+  font-size: 64px;
+  margin-top: 5vh;
+  color: rgba(255, 255, 255, 0.3);
 }
