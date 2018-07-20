@@ -90,12 +90,12 @@ body .board .card-del {
 .card{
   position: relative;
   float: left;
-
   margin-left: -40px;
   margin-bottom: 30px;
   background-color: orange;
    border-radius: 5px;
    padding: 5px 25px 5px 15px;
+   height: 100%;
 }
 
 .column-container {

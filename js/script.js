@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
   		this.id = randomString();
   		this.description = description;
   		this.element = generateTemplate('card-template', { description: this.description }, 'li');
-		this.element.querySelector('.card').addEventListener('click', function (event) { 
+		  this.element.querySelector('.card').addEventListener('click', function (event) { 
 			event.stopPropagation();
 
   			if (event.target.classList.contains('btn-delete')) {
@@ -110,10 +110,12 @@ board.addColumn(doneColumn);
 // CREATING CARDS
 var card1 = new Card('New task');
 var card2 = new Card('Create kanban boards');
+var card3 = new Card ('Everything');
 
 // ADDING CARDS TO COLUMNS
 todoColumn.addCard(card1);
 doingColumn.addCard(card2);
+doneColumn.addCard(card3);
 
 
 
